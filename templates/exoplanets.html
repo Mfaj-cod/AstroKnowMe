@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Exoplanets</h2>
+    <p class="text-secondary">Data from NASA Exoplanet Archive</p>
+</div>
+
+{% if planets and planets|length > 0 %}
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Planet Name</th>
+                <th>Host Star</th>
+                <th>Discovery Year</th>
+                <th>Discovery Facility</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for planet in planets %}
+            <tr>
+                <td>{{ planet.pl_name or 'N/A' }}</td>
+                <td>{{ planet.hostname or 'N/A' }}</td>
+                <td>{{ planet.disc_year or 'N/A' }}</td>
+                <td>{{ planet.disc_facility or 'N/A' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-warning text-center">
+    No exoplanet data available at the moment.
+</div>
+{% endif %}
+
+<a href="/" class="btn btn-primary mt-3">← Back to Overview</a>
+
+{% endblock %}

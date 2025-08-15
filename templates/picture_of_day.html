@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Astronomy Picture of the Day</h2>
+    <p class="text-secondary">{{ apod.date }}</p>
+</div>
+
+<div class="card shadow-lg mx-auto" style="max-width: 900px; background-color: #1e2530; color: #f0f6fc;">
+    {% if apod.media_type == 'image' %}
+        <img src="{{ apod.hdurl or apod.url }}" class="card-img-top" alt="{{ apod.title }}">
+    {% elif apod.media_type == 'video' %}
+        <div class="ratio ratio-16x9">
+            <iframe src="{{ apod.url }}" title="{{ apod.title }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    {% endif %}
+    <div class="card-body">
+        <h4 class="card-title">{{ apod.title }}</h4>
+        <p class="card-text">{{ apod.explanation }}</p>
+        <a href="/" class="btn btn-primary mt-3">← Back to Overview</a>
+    </div>
+</div>
+
+{% endblock %}

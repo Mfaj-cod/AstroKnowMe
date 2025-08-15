@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Global Imagery</h2>
+    <p class="text-secondary">Latest Earth images from NASA EPIC Camera</p>
+</div>
+
+{% if images %}
+<div class="row g-4">
+    {% for img in images %}
+    <div class="col-md-4 col-sm-6">
+        <div class="card h-100 shadow-lg" style="background-color: #1e2530; color: #f0f6fc;">
+            <a href="{{ img.url }}" target="_blank">
+                <img src="{{ img.url }}" class="card-img-top" alt="{{ img.caption }}">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{ img.caption }}</h5>
+                <p class="card-text text-secondary small">{{ img.date }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-warning text-center">
+    No imagery available at the moment.
+</div>
+{% endif %}
+
+<a href="/" class="btn btn-primary mt-4">← Back to Overview</a>
+
+{% endblock %}

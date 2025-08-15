@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Cosmic Weather</h2>
+    <p class="text-secondary">Live space weather data from NOAA SWPC</p>
+</div>
+
+<div class="row g-4">
+
+    <!-- Solar Wind Speed -->
+    <div class="col-md-6">
+        <div class="card shadow-lg text-center p-3" style="background-color: #1e2530; color: #f0f6fc;">
+            <h4>☀️ Solar Wind Speed</h4>
+            {% if weather.solar_wind %}
+                <p class="display-6">{{ weather.solar_wind }} km/s</p>
+            {% else %}
+                <p class="text-warning">Data unavailable</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Planetary K-index -->
+    <div class="col-md-6">
+        <div class="card shadow-lg text-center p-3" style="background-color: #1e2530; color: #f0f6fc;">
+            <h4>🌍 Planetary K-index</h4>
+            {% if weather.k_index %}
+                <p class="display-6">{{ weather.k_index }}</p>
+                <small class="text-secondary">Geomagnetic activity level</small>
+            {% else %}
+                <p class="text-warning">Data unavailable</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+<!-- Alerts Section -->
+<div class="mt-5">
+    <h4>🚨 Space Weather Alerts</h4>
+    {% if weather.alerts and weather.alerts|length > 0 %}
+        <ul class="list-group">
+            {% for alert in weather.alerts %}
+            <li class="list-group-item" style="background-color: #1e2530; color: #f0f6fc;">
+                <strong>{{ alert.issue_time }}</strong> — {{ alert.message }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-warning">No recent alerts.</p>
+    {% endif %}
+</div>
+
+<a href="/" class="btn btn-primary mt-4">← Back to Overview</a>
+
+{% endblock %}

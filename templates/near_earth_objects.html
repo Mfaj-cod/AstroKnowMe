@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Near Earth Objects</h2>
+    <p class="text-secondary">Asteroids approaching on {{ date }}</p>
+</div>
+
+{% if asteroids %}
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover align-middle">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Estimated Diameter (m)</th>
+                <th>Relative Velocity (km/h)</th>
+                <th>Miss Distance (km)</th>
+                <th>Hazardous</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asteroid in asteroids %}
+            <tr>
+                <td>{{ asteroid.name }}</td>
+                <td>
+                    {{ asteroid.estimated_diameter.meters.estimated_diameter_min | round(1) }}
+                    -
+                    {{ asteroid.estimated_diameter.meters.estimated_diameter_max | round(1) }}
+                </td>
+                <td>{{ asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour | float | round(2) }}</td>
+                <td>{{ asteroid.close_approach_data[0].miss_distance.kilometers | float | round(2) }}</td>
+                <td>
+                    {% if asteroid.is_potentially_hazardous_asteroid %}
+                        <span class="badge bg-danger">Yes</span>
+                    {% else %}
+                        <span class="badge bg-success">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-warning text-center">
+    No Near Earth Objects data available for today.
+</div>
+{% endif %}
+
+<a href="/" class="btn btn-primary mt-3">← Back to Overview</a>
+
+{% endblock %}

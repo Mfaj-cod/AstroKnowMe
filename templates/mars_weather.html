@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="astro-title">Mars Weather</h2>
+    <p class="text-secondary">Latest data from InSight Mission</p>
+</div>
+
+{% if mars and mars.sol %}
+<div class="card mx-auto shadow-lg" style="max-width: 600px; background-color: #1e2530; color: #f0f6fc;">
+    <div class="card-body text-center">
+        <h4 class="card-title">Sol {{ mars.sol }} (Martian Day)</h4>
+        <p class="card-text mb-2"><strong>Season:</strong> {{ mars.season or 'N/A' }}</p>
+        <p class="card-text mb-2"><strong>Temperature:</strong> {{ mars.min_temp or 'N/A' }}°C to {{ mars.max_temp or 'N/A' }}°C</p>
+        <p class="card-text mb-2"><strong>Pressure:</strong> {{ mars.pressure or 'N/A' }} Pa</p>
+        <p class="card-text mb-2"><strong>Wind Speed:</strong> {{ mars.wind_speed or 'N/A' }} m/s</p>
+        <p class="card-text text-secondary small">
+    Last Updated: {{ mars.terrestrial_date or 'N/A' }} (archived data)
+</p>
+
+    </div>
+</div>
+{% else %}
+<div class="alert alert-warning text-center">
+    Mars weather data is currently unavailable.
+</div>
+{% endif %}
+
+<a href="/" class="btn btn-primary mt-4">← Back to Overview</a>
+
+{% endblock %}
