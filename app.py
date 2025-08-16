@@ -44,8 +44,8 @@ def safe_json_request(url, params=None):
 #functions:-
 
 #astronomy picture of the day
-# def get_apod():
-#     return safe_json_request("https://api.nasa.gov/planetary/apod", {"api_key": API_KEY})
+def get_apod():
+    return safe_json_request("https://api.nasa.gov/planetary/apod", {"api_key": API_KEY})
 
 #near earth objects
 def get_neo():
@@ -88,7 +88,7 @@ def get_global_imagery():
 #routes:-
 @app.route("/")
 def overview():
-    # apod = get_apod()
+    apod = get_apod()
     neo = get_neo()
     exoplanets = get_exoplanets()
     mars = get_mars_weather()
@@ -97,26 +97,26 @@ def overview():
     logger.info(f"New user clicked on link.")
     return render_template(
         "overview.html",
-        # apod=apod,
+        apod=apod,
         neo=neo,
         exoplanets=exoplanets,
         mars=mars,
         epic=epic
     )
 
-# @app.route("/PictureOfTheDay")
-# def picture_of_the_day():
-#     # apod = get_apod()
-#     if not apod or "url" not in apod:
-#         apod = {
-#             "title": "No Data",
-#             "date": "",
-#             "media_type": "",
-#             "url": "",
-#             "explanation": "The APOD API did not return data. Please try again later."
-#         }
-#     logger.info(f"User viewed the apod.")
-#     return render_template("picture_of_day.html", apod=apod)
+@app.route("/PictureOfTheDay")
+def picture_of_the_day():
+    apod = get_apod()
+    if not apod or "url" not in apod:
+        apod = {
+            "title": "No Data",
+            "date": "",
+            "media_type": "",
+            "url": "",
+            "explanation": "The APOD API did not return data. Please try again later."
+        }
+    logger.info(f"User viewed the apod.")
+    return render_template("picture_of_day.html", apod=apod)
 
 
 
