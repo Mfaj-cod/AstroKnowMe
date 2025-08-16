@@ -21,7 +21,7 @@ logger = logging.getLogger("AstroKnowMe")
 app = Flask(__name__)
 
 load_dotenv()  # Load variables from .env
-API_KEY = os.getenv("NASA_API_KEY", "DEMO_KEY")
+API_KEY = os.getenv("NASA_API_KEY")
 
 #safe json requestor:-
 def safe_json_request(url, params=None):
