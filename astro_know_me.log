@@ -175,3 +175,4 @@
 2025-08-15 21:30:44 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 21:30:44] "GET /Exoplanets HTTP/1.1" 200 -
 2025-08-15 21:30:51 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 21:30:51] "GET /MarsWeather HTTP/1.1" 200 -
 2025-08-15 21:31:04 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 21:31:04] "GET /GlobalImagery HTTP/1.1" 200 -
+2025-08-15 21:31:13 - werkzeug - INFO - 127.0.0.1 - - [15/Aug/2025 21:31:13] "GET /CosmicWeather HTTP/1.1" 200 -

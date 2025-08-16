@@ -44,8 +44,28 @@ def safe_json_request(url, params=None):
 #functions:-
 
 #astronomy picture of the day
+from datetime import date
+
+cached_apod = {}
+last_fetch_date = None
+
 def get_apod():
-    return safe_json_request("https://api.nasa.gov/planetary/apod", {"api_key": API_KEY})
+    global cached_apod, last_fetch_date
+    today = date.today()
+    if last_fetch_date == today and cached_apod:
+        return cached_apod
+
+    url = "https://api.nasa.gov/planetary/apod"
+    params = {"api_key": API_KEY}
+    r = requests.get(url, params=params, timeout=10)
+
+    if r.status_code == 200:
+        cached_apod = r.json()
+        last_fetch_date = today
+        return cached_apod
+    else:
+        print(f"APOD API Error: {r.status_code} - {r.text}")
+        return {}
 
 #near earth objects
 def get_neo():
