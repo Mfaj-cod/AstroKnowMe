@@ -21,12 +21,12 @@ logger = logging.getLogger("AstroKnowMe")
 app = Flask(__name__)
 
 load_dotenv()  # Load variables from .env
-API_KEY = os.getenv("NASA_API_KEY", "DEMO_KEY")
+API_KEY = os.getenv("NASA_API_KEY")
 
 #safe json requestor:-
 def safe_json_request(url, params=None):
     try:
-        r = requests.get(url, params=params, headers={"Accept": "application/json"}, timeout=10)
+        r = requests.get(url, params=params, headers={"Accept": "application/json"}, timeout=50)
         if r.status_code == 200:
             try:
                 return r.json()
@@ -38,7 +38,7 @@ def safe_json_request(url, params=None):
             return {}
     except requests.exceptions.RequestException as e:
         print(f"API Request Failed {url}: {e}")
-        return {}
+        return {"title": "NASA APOD", "url": "", "explanation": "Could not fetch data"}
 
 
 #functions:-
