@@ -4,6 +4,9 @@ from datetime import datetime as dt
 import logging
 import os
 from dotenv import load_dotenv
+import random
+from fact_file import facts
+
 
 #logging setting
 logging.basicConfig(                    
@@ -88,6 +91,7 @@ def get_global_imagery():
 #routes:-
 @app.route("/")
 def overview():
+    random_fact = random.choice(facts)
     apod = get_apod()
     neo = get_neo()
     exoplanets = get_exoplanets()
@@ -101,7 +105,8 @@ def overview():
         neo=neo,
         exoplanets=exoplanets,
         mars=mars,
-        epic=epic
+        epic=epic,
+        fact=random_fact
     )
 
 @app.route("/PictureOfTheDay")
