@@ -87,6 +87,43 @@ def get_mars_weather():
 def get_global_imagery():
     return safe_json_request("https://api.nasa.gov/EPIC/api/natural/images", {"api_key": API_KEY}) or []
 
+def get_cosmic_weather():
+    
+    data = {
+        "solar_wind": None,
+        "k_index": None,
+        "alerts": []
+    }
+
+    try:
+        # Solar wind speed
+        sw_url = "https://services.swpc.noaa.gov/products/solar-wind/plasma-1-day.json"
+        sw_data = safe_json_request(sw_url)
+        if isinstance(sw_data, list) and len(sw_data) > 1:
+            latest = sw_data[-1]
+            data["solar_wind"] = latest[1]  # Speed km/s
+
+        # K-index
+        kp_url = "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
+        kp_data = safe_json_request(kp_url)
+        if isinstance(kp_data, list) and len(kp_data) > 1:
+            latest_kp = kp_data[-1]
+            data["k_index"] = latest_kp[1]
+
+        # alerts
+        alerts_url = "https://services.swpc.noaa.gov/products/alerts.json"
+        alerts_data = safe_json_request(alerts_url)
+        if isinstance(alerts_data, list) and len(alerts_data) > 1:
+            for alert in alerts_data[1:6]:  # Take top 5
+                data["alerts"].append({
+                    "message": alert[3],
+                    "issue_time": alert[0]
+                })
+
+    except Exception as e:
+        print(f"Cosmic weather fetch error: {e}")
+    logger.info(f"New user viewed cosmic weather.")
+    return data
 
 #routes:-
 @app.route("/")
@@ -165,43 +202,6 @@ def global_imagery():
     return render_template("global_imagery.html", images=images)
 
 
-def get_cosmic_weather():
-    
-    data = {
-        "solar_wind": None,
-        "k_index": None,
-        "alerts": []
-    }
-
-    try:
-        # Solar wind speed
-        sw_url = "https://services.swpc.noaa.gov/products/solar-wind/plasma-1-day.json"
-        sw_data = safe_json_request(sw_url)
-        if isinstance(sw_data, list) and len(sw_data) > 1:
-            latest = sw_data[-1]
-            data["solar_wind"] = latest[1]  # Speed km/s
-
-        # K-index
-        kp_url = "https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json"
-        kp_data = safe_json_request(kp_url)
-        if isinstance(kp_data, list) and len(kp_data) > 1:
-            latest_kp = kp_data[-1]
-            data["k_index"] = latest_kp[1]
-
-        # alerts
-        alerts_url = "https://services.swpc.noaa.gov/products/alerts.json"
-        alerts_data = safe_json_request(alerts_url)
-        if isinstance(alerts_data, list) and len(alerts_data) > 1:
-            for alert in alerts_data[1:6]:  # Take top 5
-                data["alerts"].append({
-                    "message": alert[3],
-                    "issue_time": alert[0]
-                })
-
-    except Exception as e:
-        print(f"Cosmic weather fetch error: {e}")
-    logger.info(f"New user viewed cosmic weather.")
-    return data
 
 @app.route("/CosmicWeather")
 def cosmic_weather():
