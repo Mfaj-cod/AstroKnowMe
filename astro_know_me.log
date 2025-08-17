@@ -203,3 +203,46 @@
 2025-08-17 01:05:35 - werkzeug - INFO -  * Restarting with stat
 2025-08-17 01:05:36 - werkzeug - WARNING -  * Debugger is active!
 2025-08-17 01:05:36 - werkzeug - INFO -  * Debugger PIN: 121-034-627
+2025-08-17 21:11:22 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 21:11:22 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 21:11:22 - werkzeug - INFO -  * Restarting with stat
+2025-08-17 21:11:23 - werkzeug - WARNING -  * Debugger is active!
+2025-08-17 21:11:23 - werkzeug - INFO -  * Debugger PIN: 121-034-627
+2025-08-17 21:11:45 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:11:45] "GET / HTTP/1.1" 200 -
+2025-08-17 21:11:58 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:11:58] "GET /CosmicWeather HTTP/1.1" 200 -
+2025-08-17 21:13:48 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 21:13:48 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 21:13:48 - werkzeug - INFO -  * Restarting with stat
+2025-08-17 21:13:49 - werkzeug - WARNING -  * Debugger is active!
+2025-08-17 21:13:49 - werkzeug - INFO -  * Debugger PIN: 121-034-627
+2025-08-17 21:14:02 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:14:02] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-17 21:14:02 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:14:02] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-17 21:14:02 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:14:02] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-17 21:14:03 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:14:03] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=3mAz9Gct7fRAlyAjk6qC HTTP/1.1" 200 -
+2025-08-17 21:14:03 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:14:03] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-17 21:14:50 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 21:14:50 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 21:14:50 - werkzeug - INFO -  * Restarting with stat
+2025-08-17 21:14:50 - werkzeug - WARNING -  * Debugger is active!
+2025-08-17 21:14:50 - werkzeug - INFO -  * Debugger PIN: 121-034-627
+2025-08-17 21:15:01 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:15:01] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-08-17 21:15:01 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:15:01] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-08-17 21:15:01 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:15:01] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-08-17 21:15:01 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:15:01] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=W0NbVKvScZpK3N6skKDY HTTP/1.1" 200 -
+2025-08-17 21:15:01 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:15:01] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-17 21:20:02 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-17 21:20:02 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-17 21:20:02 - werkzeug - INFO -  * Restarting with stat
+2025-08-17 21:20:03 - werkzeug - WARNING -  * Debugger is active!
+2025-08-17 21:20:03 - werkzeug - INFO -  * Debugger PIN: 121-034-627
+2025-08-17 21:20:14 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:20:14] "GET / HTTP/1.1" 200 -
+2025-08-17 21:21:41 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:21:41] "GET /PictureOfTheDay HTTP/1.1" 200 -
+2025-08-17 21:21:48 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:21:48] "GET /NearEarthObjects HTTP/1.1" 200 -
+2025-08-17 21:21:56 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:21:56] "GET /Exoplanets HTTP/1.1" 200 -
+2025-08-17 21:22:02 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:22:02] "GET /CosmicWeather HTTP/1.1" 200 -
+2025-08-17 21:22:07 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:22:07] "GET /MarsWeather HTTP/1.1" 200 -
+2025-08-17 21:22:13 - werkzeug - INFO - 127.0.0.1 - - [17/Aug/2025 21:22:13] "GET /GlobalImagery HTTP/1.1" 200 -

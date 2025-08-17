@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="astro-title text-center mb-4">Overview</h2>
+<!-- <h2 class="astro-title text-center mb-4">Overview</h2> -->
 <div class="row g-4">
 
   <!-- Picture of the Day -->
@@ -10,7 +10,7 @@
       <div class="card-body">
         <h5 class="card-title">Astronomical Picture of the Day</h5>
         <p class="card-text">{{ apod.title }}</p>
-        <a href="/PictureOfTheDay" class="btn btn-primary">View More</a>
+        <a href="/PictureOfTheDay" class="btn btn-primary">View Details</a>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
       <div class="card-body">
         <h5 class="card-title">Near Earth Objects</h5>
         <p class="card-text">Objects today: {{ neo.element_count }}</p>
-        <a href="/NearEarthObjects" class="btn btn-primary">View More</a>
+        <a href="/NearEarthObjects" class="btn btn-primary">Get details</a>
       </div>
     </div>
   </div>
@@ -36,10 +36,22 @@
             <li>{{ planet.pl_name }} - {{ planet.disc_year }}</li>
           {% endfor %}
         </ul>
-        <a href="/Exoplanets" class="btn btn-primary">View More</a>
+        <a href="/Exoplanets" class="btn btn-primary">Get Details</a>
       </div>
     </div>
   </div>
+
+    <!-- Near Earth Objects -->
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Cosmic Weather</h5>
+        <p>Solar Wind and Planetary K-index</p>
+        <a href="/CosmicWeather" class="btn btn-primary">Get Data</a>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Mars Weather -->
   <div class="col-md-6">
@@ -47,7 +59,7 @@
       <div class="card-body">
         <h5 class="card-title">Mars Weather</h5>
         <p>Sol: {{ mars.sol }} | Temp: {{ mars.min_temp }}°C to {{ mars.max_temp }}°C</p>
-        <a href="/MarsWeather" class="btn btn-primary">View More</a>
+        <a href="/MarsWeather" class="btn btn-primary">Get Data</a>
       </div>
     </div>
   </div>
@@ -58,7 +70,7 @@
       <div class="card-body">
         <h5 class="card-title">Global Imagery</h5>
         <p>Images available: {{ epic|length }}</p>
-        <a href="/GlobalImagery" class="btn btn-primary">View More</a>
+        <a href="/GlobalImagery" class="btn btn-primary">Get Images</a>
       </div>
     </div>
   </div>
