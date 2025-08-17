@@ -67,8 +67,15 @@
     .navbar-nav .nav-link:hover::after {
           width: 100%;
     }
+    .share-buttons .btn {
+          margin-right: 6px;
+          border-radius: 20px;
+          transition: all 0.3s ease-in-out;
+    }
 
-
+    .share-buttons .btn:hover {
+         transform: scale(1.1);
+    }
 
 </style>
 
@@ -120,11 +127,40 @@
       <a href="https://api.nasa.gov/" target="_blank" class="text-info text-decoration-none">NASA Open APIs</a>
     </p>
     <div>
-      <a href="https://www.instagram.com/sheikhhoneysingh?igsh=MWIwZWcyb2t0cmk5ag==" target="_blank" class="text-light mx-2"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.instagram.com/sheikhhoneysingh?igsh=MWIwZWcyb2t0cmk5ag==" target="_blank" class="text-light mx-2" style="text-decoration: none;"><i class="bi bi-instagram"></i> Profile</a>
     </div>
   </div>
+
+  <!--share buttons-->
+      <div class="share-buttons mt-3">
+  <a class="btn btn-sm btn-outline-primary" target="_blank" 
+     href="https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20fact!%20AstroKnowMe%20🌌%20https://astroknowme.live">Twitter
+  </a>
+
+  <a class="btn btn-sm btn-outline-success" target="_blank" 
+     href="https://wa.me/?text=🚀%20Check%20this%20out:%20https://astroknowme.live">WhatsApp
+  </a>
+
+  <a class="btn btn-sm btn-outline-info" target="_blank" 
+     href="https://www.linkedin.com/shareArticle?mini=true&url=https://astroknowme.live&title=AstroKnowMe&summary=Explore%20the%20cosmos%20with%20me!&source=AstroKnowMe">LinkedIn
+  </a>
+
+  <button class="btn btn-sm btn-outline-secondary copy-btn">Copy Link</button>
+</div>
+
 </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".copy-btn").forEach(btn => {
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText("https://astroknowme.live");
+        btn.innerText = "✅Copied!";
+        setTimeout(() => { btn.innerText = "Copy Link"; }, 2000);
+      });
+    });
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
