@@ -14,20 +14,31 @@
     </div>
   </div>
 
-  <!-- Near Earth Objects -->
-  <div class="col-md-4">
-    <div class="card h-100">
-      <div class="card-body">
-        <h5 class="card-title">Near Earth Objects</h5>
-        <p class="card-text">Objects today: {{ neo.element_count }}</p>
-        <a href="/NearEarthObjects" class="btn btn-primary">Get details</a>
-      </div>
+<!-- Near Earth Objects -->
+<div class="col-md-4">
+  <div class="card h-100">
+    
+    <!-- Static Image -->
+    <img src="https://i2-prod.irishstar.com/article34234175.ece/ALTERNATES/s1200c/1_Asteroid-approaching-planet-Earth.jpg" class="card-img-top" alt="Near Earth Object">
+
+
+    <!-- Card Content -->
+    <div class="card-body">
+      <h5 class="card-title">Near Earth Objects</h5>
+      <p class="card-text">Objects today: {{ neo.element_count }}</p>
+      <a href="/NearEarthObjects" class="btn btn-primary">Get details</a>
     </div>
   </div>
+</div>
+
 
   <!-- Exoplanets -->
   <div class="col-md-4">
     <div class="card h-100">
+        <!-- Static Image -->
+    <img src="https://www.spaceconnectonline.com.au/images/outer-space_new-planets_sc.jpg" class="card-img-top" alt="Exoplanets">
+
+    <!-- Card body -->
       <div class="card-body">
         <h5 class="card-title">Exoplanets</h5>
         <ul>
@@ -43,6 +54,9 @@
     <!-- Near Earth Objects -->
   <div class="col-md-4">
     <div class="card h-100">
+    <!-- Static Image -->
+    <img src="https://science.nasa.gov/wp-content/uploads/2023/04/SW1.png" class="card-img-top" alt="Cosmic-Weather">
+
       <div class="card-body">
         <h5 class="card-title">Cosmic Weather</h5>
         <p>Solar Wind and Planetary K-index</p>
@@ -55,6 +69,9 @@
   <!-- Mars Weather -->
   <div class="col-md-6">
     <div class="card h-100">
+<!-- Static Image -->
+    <img src="https://m.economictimes.com/thumb/msid-122164288,width-1600,height-900,resizemode-4,imgsize-190234/nit-research-to-improve-weather-prediction-on-mars-for-better-robotic-human-mission-planning.jpg" class="card-img-top" alt="Mars-Weather">
+
       <div class="card-body">
         <h5 class="card-title">Mars Weather</h5>
         <p>Sol: {{ mars.sol }} | Temp: {{ mars.min_temp }}°C to {{ mars.max_temp }}°C</p>
@@ -66,6 +83,9 @@
   <!-- Global Imagery -->
   <div class="col-md-6">
     <div class="card h-100">
+<!-- Static Image -->
+    <img src="https://live.staticflickr.com/7087/7374419816_e1737cc268_b.jpg" class="card-img-top" alt="Globe">
+
       <div class="card-body">
         <h5 class="card-title">Global Imagery</h5>
         <p>Images available: {{ epic|length }}</p>
