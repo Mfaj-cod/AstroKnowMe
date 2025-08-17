@@ -33,6 +33,41 @@
         transition: transform 0.3s ease;
         box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
     }
+    .navbar-nav .nav-link {
+        font-weight: 600;
+        background: linear-gradient(90deg, #ff4ecd, #8b5cf6); /* pink → purple */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+          transition: background 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+          background: linear-gradient(90deg, #ff8cfc, #a78bfa); /* brighter on hover */
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+    }
+    .navbar-nav .nav-link {
+          position: relative;
+          padding-bottom: 4px;
+    }
+
+    .navbar-nav .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          left: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, #ff4ecd, #8b5cf6);
+          transition: width 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+          width: 100%;
+    }
+
 
 
 </style>
