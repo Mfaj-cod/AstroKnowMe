@@ -35,3 +35,11 @@
 2025-08-18 12:44:04 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 12:44:04] "GET / HTTP/1.1" 200 -
 2025-08-18 12:44:21 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 12:44:21] "GET / HTTP/1.1" 200 -
 2025-08-18 12:44:48 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 12:44:48] "GET / HTTP/1.1" 200 -
+2025-08-18 13:09:27 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-18 13:09:27 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-18 13:09:27 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-08-18 13:09:28 - werkzeug - WARNING -  * Debugger is active!
+2025-08-18 13:09:28 - werkzeug - INFO -  * Debugger PIN: 135-973-901
+2025-08-18 13:09:44 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:09:44] "GET / HTTP/1.1" 200 -
+2025-08-18 13:10:06 - werkzeug - INFO - 127.0.0.1 - - [18/Aug/2025 13:10:06] "GET / HTTP/1.1" 200 -
