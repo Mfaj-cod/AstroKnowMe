@@ -38,7 +38,7 @@ It’s a one-stop dashboard for cosmic exploration — from the latest astronomy
 
 Clone the repository:
 
-git clone https://https://github.com/Mfaj-cod/AstroKnowMe
+git clone https://github.com/Mfaj-cod/AstroKnowMe
 cd AstroKnowMe
 
 Create a virtual environment:
